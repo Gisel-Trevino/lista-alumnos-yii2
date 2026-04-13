@@ -6,7 +6,7 @@ use yii\bootstrap5\LinkPager;
 
 ?>
 
-<h1> Alumnos </h1>
+<h1>Lista de Alumnos </h1>
 
 <div class="row g-3">
     <?php foreach ($personas as $persona): ?>
