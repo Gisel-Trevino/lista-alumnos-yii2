@@ -5,6 +5,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
+use yii\bootstrap5\LinkPager;
 
 /** @var yii\web\View $this */
 /** @var app\models\PersonaSearch $searchModel */
@@ -26,13 +27,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
+        
         'pager' => [
-            'options' => ['class' => 'pagination'],
-            'pageCssClass' => 'page-item',
-            'activePageCssClass' => 'active',
-            'disabledPageCssClass' => 'disabled',
-            'linkOptions' => ['class' => 'page-link'],
+            'class' => LinkPager::class,
+            'pagination' => $dataProvider->pagination,
         ],
+        
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
